@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { isNumberObject } from "util/types";
 
 interface QuizQuestion {
   id: number;
@@ -15,13 +14,11 @@ const QuizQuestions: QuizQuestion[] = [
     questionText: "Какой тип ремонта вам необходим ?",
     options: ["Косметический", "Капитальный", "Дизайнерский"],
   },
-
   {
     id: 2,
     questionText: "Выберите площадь объекта",
     options: ["До 50 м²", "От 50 до 100 м²", "Более 100 м²"],
   },
-
   {
     id: 3,
     questionText: "Когда планируете начать ремонт ?",
@@ -56,9 +53,7 @@ export default function QuizSmartPage() {
   };
 
   return (
-    // Этот новый внешний div создает глубокий темный фон на весь экран и центрирует карточку
     <div className="min-h-screen w-full bg-slate-900 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-950 flex items-center justify-center p-4">
-      {/* Наша основная карточка квиза (теперь она будет красиво парить по центру) */}
       <div className="w-full max-w-xl bg-white rounded-2xl shadow-2xl shadow-black/40 p-6 md:p-8 space-y-6 border border-white/10">
         <h1 className="text-2xl font-bold text-gray-900 border-b border-gray-100 pb-4 text-center">
           Калькулятор стоимости ремонта
@@ -66,7 +61,6 @@ export default function QuizSmartPage() {
 
         {currentStep < QuizQuestions.length ? (
           <>
-            {/* Контейнер прогресс-бара */}
             <div className="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden mb-6">
               <div
                 className="bg-gradient-to-r from-blue-500 to-indigo-600 h-full transition-all duration-500 ease-out"
